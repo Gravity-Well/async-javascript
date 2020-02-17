@@ -2,7 +2,7 @@ const request = require('request');
 request(`https://maciejtreder.github.io/asynchronous-javascript/directors`, {json: true}, (err,res,directors)=> processDirectors(err,res,directors));
 
 function processDirectors(err,res,directors){
-    console.log('here' + directors)
+    
 
     let tarantinoId = directors.find(director => director.name === "Quentin Tarantino").id;
     request(`https://maciejtreder.github.io/asynchronous-javascript/directors/${tarantinoId}/movies`, {json: true}, (err, res, movies) => {
